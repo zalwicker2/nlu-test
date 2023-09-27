@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  year = 2020;
+  year = 1970; // epoch time
   constructor() {
+    // set the year to the current year on load
     this.year = new Date().getFullYear();
   }
 }

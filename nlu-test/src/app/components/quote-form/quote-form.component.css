@@ -49,7 +49,11 @@ textarea:invalid {
     transition: all .3s ease;
 }
 
-.submit:hover {
+.submit.disabled {
+    background-color: gray;
+}
+
+.submit:not(.disabled):hover {
     background-color: #12b4ff;
     color: white;
     transform: scale(1.05);
@@ -107,4 +111,13 @@ textarea {
 .error {
     color: red;
     margin-top: 8px;
+}
+
+.status {
+    color: limegreen;
+    font-weight: bold;
+}
+
+.status.failure {
+    color: red;
 }

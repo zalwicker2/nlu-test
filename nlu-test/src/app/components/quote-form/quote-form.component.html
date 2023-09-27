@@ -3,20 +3,22 @@
     <form #form>
         <div class="form-group">
             <label for="name">Name</label>
-            <input #name name="name" type="text" placeholder="John Doe" (blur)="dummy()" required pattern="[a-zA-Z\s]+">
+            <input #name name="name" type="text" placeholder="John Doe" (blur)="dummy()" required pattern="[a-zA-Z\s]+"
+                [disabled]="!canSubmit">
             <div class="error" *ngIf="name.value != '' && !name.checkValidity()">Name must only contain letters and
                 spaces.</div>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required email #usermail (blur)="dummy()">
+            <input id="email" name="email" type="email" required email #usermail (blur)="dummy()"
+                placeholder="address@email.com" [disabled]="!canSubmit">
             <div class="error" *ngIf="usermail.value != '' && !usermail.checkValidity()">Please provide a valid email
                 address.</div>
         </div>
         <div class="form-group">
             <label for="capability">Capability</label>
             <select name="capability" #capability [ngStyle]="{'color': capability.value == '' ? 'gray' : 'black'}"
-                (change)="dummy()">
+                (change)="dummy()" [disabled]="!canSubmit">
                 <option value="" disabled selected>Select a capability</option>
                 <option value="design">Design</option>
                 <option value="production">Production</option>
@@ -25,12 +27,16 @@
         </div>
         <div class="form-group">
             <label for="comments">Comments</label>
-            <textarea name="comments" (blur)="dummy()" pattern="[a-zA-Z0-9\s\.\!\?]+"></textarea>
+            <textarea name="comments" (blur)="dummy()" pattern="[a-zA-Z0-9\s\.\!\?]+" #comments
+                [disabled]="!canSubmit"></textarea>
+            <div class="error" *ngIf="comments.value != '' && !validateComments()">Comments may not contain
+                special characters.</div>
         </div>
         <div class="inline-form">
-            <input type="checkbox" name="newsletter" value="enabled" (blur)="dummy()">
-            <label for="newsletter">I'd like to recieve the newsletter</label>
+            <input type="checkbox" name="newsletter" value="enabled" (blur)="dummy()" #check [disabled]="!canSubmit">
+            <label for="newsletter" (click)="check.checked = !check.checked">I'd like to recieve the newsletter</label>
         </div>
-        <div class="submit" (click)="Submit()">Get a quote</div>
+        <div class="submit" [ngClass]="{'disabled': !canSubmit}" (click)="Submit()">Get a quote</div>
+        <div class="status" [ngClass]="{'failure': !status.success}">{{status.msg}}</div>
     </form>
 </div>

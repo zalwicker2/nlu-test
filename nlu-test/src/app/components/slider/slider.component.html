@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="controls">
-        <div *ngFor="let image of images; index as x" (click)="ClickToImage(x)"
+        <div *ngFor="let image of tabs; index as x" (click)="ClickToImage(x)"
             [ngStyle]="{'background': imageIndex == x ? 'white' : '#0006'}">
         </div>
     </div>

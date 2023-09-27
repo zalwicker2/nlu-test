@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NotFoundComponent {
   currentPath = '';
-  constructor(private route: ActivatedRoute) {
+  constructor(route: ActivatedRoute) {
     route.url.subscribe(v => {
       this.currentPath = v.map(v => v.path).join('/');
     })
