@@ -43,11 +43,16 @@ export class QuoteFormComponent {
   }
 
   @ViewChild('comments') comments;
+  /**
+   * @function validateComments
+   * Validates the comments textarea since textarea does not have pattern matching built-in
+   * @returns boolean Whether comments are valid
+   */
   validateComments() {
     const value = this.comments.nativeElement.value;
-    const match = value.match(/[\w\s\d\!\.\?]+/)
-    if (match) {
-      if (match[0] == value) {
+    const match = value.match(/[\w\s\d\!\.\?]+/) // allow letters, spaces, numbers, and punctuation.
+    if (match) { // if the pattern is found
+      if (match[0] == value) { // if the whole string matches the pattern
         return true;
       }
     }
