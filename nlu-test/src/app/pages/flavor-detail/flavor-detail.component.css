@@ -1,0 +1,30 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 32px;
+    padding-top: 16px;
+}
+
+@media (orientation: portrait) {
+    .main-container {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .form {
+        margin: 0 2vw;
+    }
+}
+
+.intro {
+    flex: 8;
+}
+
+.form {
+    flex: 2
+}
+
+h2 {
+    margin-top: 0;
+}

@@ -1,0 +1,11 @@
+<div>
+    <h2>Page not found!</h2>
+
+    <img src="/assets/images/notfound.jpg" width="25%">
+
+    <p>It looks like {{ currentPath == '' ? 'this page' : currentPath }} does not exist! This is likely due to the fact
+        that this is a
+        code test and not a fully fleshed out
+        website.</p>
+    <p>If you continue seeing this error, please <a [routerLink]="'/contact'">contact us!</a></p>
+</div>

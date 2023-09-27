@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px 5vw;
+}
+
+.flavor {
+    width: calc((100% / 3) - (5vw * .75))
+}
+
+h2 {
+    margin-top: 0px;
+    margin-bottom: 32px;
+}
+
+p {
+    margin: 8px;
+    text-align: center;
+}

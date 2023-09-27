@@ -1,0 +1,13 @@
+<div class="root">
+    <div class="topbar">
+        <img class="logo" src="/assets/images/logo.png" routerLink="/">
+        <div (click)="navbar.toggle()">
+            <img src="/assets/hamburger.svg" alt="">
+        </div>
+    </div>
+    <app-navbar #navbar></app-navbar>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>

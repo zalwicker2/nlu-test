@@ -1,0 +1,13 @@
+.slider-container {
+    margin: 0 10vw;
+}
+
+.main-container {
+    margin: 32px 5vw 0;
+}
+
+@media (orientation: portrait) {
+    .slider-container {
+        margin: 0;
+    }
+}

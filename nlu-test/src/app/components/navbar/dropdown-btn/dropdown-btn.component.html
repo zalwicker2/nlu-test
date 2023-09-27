@@ -1,0 +1,15 @@
+<div class="dropdown-root" (mouseleave)="showing = false">
+    <div class="mobile-shit"></div>
+    <div class="mobile" [ngClass]="{'active': showing}">
+        <a [routerLink]="rootLink" (click)="showing = false; hideNav.emit()" class="btn main">{{ title }}</a>
+        <div (click)="showing = !showing"><img src="/assets/test.svg"></div>
+    </div>
+    <a class="btn main desktop" [ngClass]="{'active': showing}" [routerLink]="rootLink"
+        (mouseenter)="showing = !showing">{{title}}</a>
+    <div class="dropdown-container" [style.height.px]="showing ? options.length * 36 : 0">
+        <div class="dropdown">
+            <a class="btn" *ngFor="let option of options" (click)="showing = false; hideNav.emit()"
+                [routerLink]="title.toLowerCase() + '/' + option.link">{{option.name}}</a>
+        </div>
+    </div>
+</div>

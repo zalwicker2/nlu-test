@@ -1,0 +1,91 @@
+.slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    transition: all .3s ease;
+}
+
+.slider-item {
+    width: 100%;
+    aspect-ratio: 2;
+}
+
+img {
+    object-fit: cover;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+}
+
+.arrow {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    width: 2%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    user-select: none;
+    background-color: #0003;
+    transition: all .3s ease;
+}
+
+
+.arrow:hover {
+    background-color: #000a;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.controls {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+    width: 100%;
+    bottom: 5%;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.controls div {
+    width: 2%;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 1000px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 4px black;
+}
+
+@media (orientation: portrait) {
+    .controls {
+        gap: 7.5%;
+    }
+
+    .controls div {
+        width: 5%;
+        height: unset;
+        aspect-ratio: 1;
+    }
+
+    .arrow {
+        width: 7.5%;
+    }
+
+    .slider-item {
+        height: calc((100vw - 2vw) / 2)
+    }
+}

@@ -1,0 +1,16 @@
+<nav [ngClass]="{'showing': showingNav}">
+    <div class="menu-item">
+        <app-dropdown-btn style="flex: 1;" title="Capabilities" rootLink="/capabilities" [options]="capabilityMenu"
+            (hideNav)="showingNav = false"></app-dropdown-btn>
+    </div>
+    <div class="menu-item">
+        <app-dropdown-btn style="flex: 1;" title="Flavors" rootLink="/flavors" [options]="flavorsMenu"
+            (hideNav)="showingNav = false"></app-dropdown-btn>
+    </div>
+    <div class="menu-item">
+        <a style="flex: 1;" class="btn main" routerLink="/about" (click)="showingNav = false">About Us</a>
+    </div>
+    <div class="menu-item">
+        <a style="flex: 1;" class="btn main" routerLink="/contact" (click)="showingNav = false">Contact Us</a>
+    </div>
+</nav>

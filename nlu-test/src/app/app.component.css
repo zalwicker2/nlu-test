@@ -1,0 +1,49 @@
+.root {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.topbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    padding-bottom: calc(64px + 16px);
+    margin: 16px 2vw;
+}
+
+.logo {
+    width: 12.5%;
+    margin: 1vh 2vw;
+    cursor: pointer
+}
+
+@media (orientation: portrait) {
+    .topbar {
+        position: sticky;
+        top: 0;
+        height: 5vh;
+        padding: 8px;
+        background-color: white;
+        z-index: 10;
+    }
+
+    .topbar div {
+        height: 75%;
+    }
+
+    .logo {
+        width: auto;
+    }
+
+    img {
+        width: auto;
+        height: 100%;
+        margin: 0;
+    }
+}

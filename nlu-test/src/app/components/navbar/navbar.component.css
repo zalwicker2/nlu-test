@@ -1,0 +1,107 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    padding: 0 16vw;
+    margin-bottom: 8px;
+    top: 0px;
+    position: sticky;
+    box-shadow: 0px 5px 10px #333a;
+    z-index: 10;
+}
+
+.main.btn {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+    width: 100%;
+    padding: .75em 1.5em;
+}
+
+.main.btn::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0px;
+    height: 4px;
+    background-color: #2787ee;
+    transition: all .3s ease;
+}
+
+.main.btn.active::before {
+    right: 0;
+    left: 0;
+}
+
+.menu-item {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn {
+    color: black;
+    text-decoration: none;
+}
+
+.btn:not(.main):hover {
+    background-color: lightgray;
+}
+
+@media (orientation: portrait) {
+    nav {
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        position: absolute;
+        left: 100vw;
+        right: -100vw;
+        top: calc(5vh + 16px);
+        transition: all .3s ease;
+    }
+
+    nav.showing {
+        display: flex;
+        left: 0;
+        right: 0;
+    }
+
+    .menu-item {
+        width: 90%;
+        margin: 0px 8px;
+    }
+
+    .main.btn {
+        font-size: 16px;
+        padding: 1em .5em;
+        text-align: left;
+    }
+
+    .main.btn::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+    }
+
+    .main.btn.active::before {
+        right: 30%;
+        left: 30%;
+    }
+}
+
+@media (orientation: landscape) {
+    .main.btn:not(.active):hover::before {
+        left: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,110 @@
+h3 {
+    font-weight: 400;
+    font-size: 24px;
+    padding: 0;
+    margin: 0px 0px 16px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px rgb(95, 95, 95);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+form:not(.ng-pristine) input:invalid,
+textarea:invalid {
+    border: 1px solid red !important;
+    box-shadow: 0px 1px 2px red;
+}
+
+.submit {
+    display: inline-block;
+    background-color: #12b4ff;
+    color: white;
+    font-size: 16px;
+    padding: 10px 8px;
+    font-weight: 400;
+    border: 1px solid #333;
+    margin: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+.submit:hover {
+    background-color: #12b4ff;
+    color: white;
+    transform: scale(1.05);
+}
+
+.inline-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    margin: 4px 4px;
+    font-size: 15px;
+}
+
+.form-group {
+    width: 100%;
+    position: relative;
+    padding: 4px;
+}
+
+.form-group label {
+    margin-left: 2px;
+    position: relative;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    margin-top: 4px;
+    width: calc(100% - 8px - 8px);
+    font-size: 16px;
+    padding: 6px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+select {
+    width: calc(100%);
+}
+
+select option:nth-child(-n + 1) {
+    color: gray;
+}
+
+select option {
+    color: black;
+}
+
+textarea {
+    height: 96px;
+}
+
+.error {
+    color: red;
+    margin-top: 8px;
+}

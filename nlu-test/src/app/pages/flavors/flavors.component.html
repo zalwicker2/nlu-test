@@ -1,0 +1,14 @@
+<div class="main-container">
+    <div class="intro">
+        <h2>Flavors</h2>
+        <div class="container">
+            <div class="flavor" *ngFor="let flavor of flavorsList" [routerLink]="flavor.CategoryId">
+                <img src="https://wallpaperaccess.com/full/2133826.jpg" width="100%">
+                <p>{{flavor.Category}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <app-quote-form></app-quote-form>
+    </div>
+</div>
