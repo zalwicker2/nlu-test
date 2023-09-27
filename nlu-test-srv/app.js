@@ -64,6 +64,7 @@ const validate = () => [
         .notEmpty().withMessage('Please select a capability.')
         .isIn(['design', 'production', 'certification']).withMessage('Please select a valid capability.'),
     body('comments')
+        .optional({ checkFalsy: true })
         .isAlphanumeric('en-US', { ignore: ' ' }).withMessage('Comments must be alphanumeric.')
         .trim(),
 ]
@@ -79,6 +80,10 @@ app.post('/quote', upload.none(), validate(), (req, res) => {
                 VALUES ('${data.name}', '${data.email}', '${data.capability}', '${data.comments}', '${newsletter}')
             `)
         })
+        res.json({ status: 200, msg: 'Data successfully submitted!' })
+    } else {
+        const errorMessage = result.array().map(e => e.msg).join(' ');
+        res.json({ status: 400, msg: 'Failed to validate: ' + errorMessage })
     }
 });
 
